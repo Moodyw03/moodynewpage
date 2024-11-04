@@ -747,96 +747,77 @@ text-decoration: underline;
 }
 
 .press-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     padding: 20px;
 }
 
 .press-box {
-    border: 1px solid #000;
-    background-color: #fff;
-    transition: all 0.3s ease;
     display: flex;
-    flex-direction: column;
-}
-
-.press-box.featured {
-    grid-column: 1 / -1;
-    flex-direction: row;
+    border: 1px solid #ddd;
     min-height: 400px;
+    flex-direction: row;
 }
 
 .press-image {
-    width: 100%;
-    height: 200px;
-    border-bottom: 1px solid #000;
-    overflow: hidden;
-}
-
-.press-box.featured .press-image {
-    width: 60%;
+    width: 40%;
     height: auto;
     border-right: 1px solid #000;
-    border-bottom: none;
 }
 
-.press-box.featured .press-content {
-    width: 40%;
+.press-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .press-content {
+    width: 60%;
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.press-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.scrollable-content {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
+/* Press Content Typography */
 .press-date {
-    font-family: "Hanken Grotesk", sans-serif;
-    font-size: 14px;
-    margin: 0;
     color: #666;
-}
-
-.press-content h3 {
-    font-family: "Hanken Grotesk", sans-serif;
-    font-size: 24px;
-    margin: 10px 0;
-    font-weight: 400;
+    font-size: 0.9em;
+    margin-bottom: 8px;
 }
 
 .press-outlet {
-    font-family: "Hanken Grotesk", sans-serif;
-    font-size: 16px;
-    margin: 10px 0;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 12px;
 }
 
 .press-excerpt {
-    font-family: "Hanken Grotesk", sans-serif;
-    font-size: 16px;
     line-height: 1.6;
-    margin: 20px 0;
-    color: #666;
+    color: #444;
+    margin-bottom: 10px;
 }
 
-.press-link {
-    display: inline-block;
-    text-decoration: none;
-    color: #000;
-    font-family: "Hanken Grotesk", sans-serif;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: all 0.3s ease;
+/* Custom scrollbar for better aesthetics */
+.scrollable-content::-webkit-scrollbar {
+    width: 6px;
 }
 
-.press-link:hover {
-    color: #34c42f;
+.scrollable-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* Update visuals title animations */
@@ -1085,5 +1066,67 @@ text-decoration: underline;
 
     .search-input {
         width: 90%;
+    }
+}
+
+.form-status {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: #34c42f;
+    color: white;
+}
+
+.form-status.error {
+    display: block;
+    background-color: #ff3b30;
+    color: white;
+}
+
+.form-status.sending {
+    display: block;
+    background-color: #007aff;
+    color: white;
+}
+
+/* Update press box layout proportions */
+.press-box {
+    display: flex;
+    border: 1px solid #ddd;
+    min-height: 400px;
+    flex-direction: row;
+}
+
+.press-image {
+    width: 40%;
+    height: auto;
+    border-right: 1px solid #000;
+}
+
+.press-content {
+    width: 60%;
+    padding: 30px;
+}
+
+/* Maintain responsive design */
+@media screen and (max-width: 768px) {
+    .press-box {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .press-image {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #000;
+    }
+
+    .press-content {
+        width: 100%;
     }
 }
