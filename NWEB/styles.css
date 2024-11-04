@@ -1,0 +1,1089 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border-bottom: 1px solid #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    height: 10vh;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.logo{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+
+}
+
+.top-nav nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.exploring,
+.the-next,
+.possibility {
+    position: absolute;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight:400;
+    text-transform: uppercase;
+
+}
+
+.exploring {
+    top: 15%;
+    left: 5%;
+}
+
+.the-next {
+    top: 45%;
+    right: 5%;
+}
+
+.possibility {
+    bottom: 25%;
+    left: 5%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.center-image {
+    max-width: 15%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.info {
+    background-color: #ffffff;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    height: 60vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #000;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.info-bottom .location,
+.info-bottom .date {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    color: #0e0d0d;
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+.links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    margin: 0;
+    text-decoration: none;
+    color: #000;
+    font-size: 40px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    background-color: #34c42f;
+    height: 25vh;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-content {
+    flex: 1;
+    padding: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-schedule {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 30px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+
+.footer-schedule p {
+    margin: 5px 0;
+}
+
+.footer-schedule a {
+    text-decoration: none;
+    color: #000;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-schedule a:hover {
+    text-decoration: underline;
+}
+
+.social{
+    display: flex;
+    flex-direction: column;
+}
+
+.social-box{
+    height: 12.5vh;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #000;
+}
+
+.social-box:first-child {
+    border-bottom: 1px solid #000;
+}
+
+.social-box a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-box i {
+    font-size: 24px;
+}
+
+.social-box:hover{
+    background-color: #000;
+    color: white;
+
+}
+
+
+
+
+/* .discography page */
+
+.discography-grid{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    width: 100vw;
+    flex: 1;
+}
+
+.grid-box{
+    height: 60vh;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+.grid-box img{
+    width: 80%;
+    height: 70%;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+}
+
+.search{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: rgb(24, 22, 22);
+    height: 50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0 20px;
+    margin-top: 10vh;
+    background-color: #fff;
+    position: sticky;
+    top: 10vh;
+    z-index: 100;
+}
+
+.search-input {
+    border: none;
+    font-size: 20px;
+    font-family: "Hanken Grotesk", sans-serif;
+    width: 300px;
+    padding: 5px;
+    margin-right: 10px;
+    background: transparent;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-icon {
+    color: #000;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.albums{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.album-title{
+    width: 50%;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-title p{
+    margin-top: -8px;
+}
+.buy{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+   align-items:flex-end;
+   justify-content: space-between;
+    
+   
+}
+
+.buy P{
+    margin-top: -8PX;
+}
+
+.icon-listen{
+font-size: 20px;
+padding-bottom: 20px;
+}
+
+/* mixes page */
+.grid-mixes{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10,15vh);
+   
+}
+
+.gridbox-mixes{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: #fff;
+   
+
+}
+
+.grid-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.big-one{
+    grid-row: 1/4;
+    grid-column: 1/2;
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.mix-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+}
+
+.mix-title .exploring,
+.mix-title .the-next,
+.mix-title .possibility {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.mix-title .exploring:hover,
+.mix-title .the-next:hover,
+.mix-title .possibility:hover {
+    transform: translateX(20px);
+    cursor: default;
+}
+
+.mix-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding-top: 20px;
+    border-top: 1px solid #000;
+}
+
+.mix-info .location {
+    font-weight: bold;
+}
+
+.mix-info .date {
+    opacity: 0.7;
+}
+
+.sound-link{
+    font-size: 30px;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+}
+
+.gridbox-mixes:hover{
+text-decoration: underline;
+}
+
+.sound-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+
+/* visuals page */
+
+.visuals-container{
+    width: 100vw;
+    display: flex;
+    margin-top: 10vh;
+}
+
+.visual-left{
+    width: 30%;
+    background-color: #34c42f;
+    height: 90vh;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    border-right: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.visuals-title{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+}
+
+.visuals-title div {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.visuals-title .exploring,
+.visuals-title .the-next,
+.visuals-title .possibility {
+    position: static;
+    transition: transform 0.3s ease;
+}
+
+.visual-description{
+    padding: 40px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin-top: auto;
+}
+
+.visual-right{
+    margin-left: 30%;
+    width: 70%;
+    min-height: 90vh;
+    padding: 0 40px;
+    background-color: #fff;
+}
+
+.visual-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.visual-box{
+    border: 1px solid #000;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    min-height: 300px;
+}
+
+.visual-video{
+    width: 60%;
+    border-right: 1px solid #000;
+    position: relative;
+    min-height: 300px;
+}
+
+.visual-video iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.visual-content{
+    width: 40%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.visual-content h3{
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+}
+
+.visual-content p{
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    color: #666;
+}
+
+.visual-box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Contact page styles */
+.contact-container {
+    width: 100vw;
+    display: flex;
+    margin-top: 10vh;
+    flex: 1;
+}
+
+.contact-left {
+    width: 30%;
+    background-color: #34c42f;
+    height: 90vh;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    border-right: 1px solid #000;
+}
+
+.contact-right {
+    margin-left: 30%;
+    width: 70%;
+    height: 90vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border: 1px solid #000;
+    height: auto;
+    margin: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 3px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    background: transparent;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    padding: 0;
+    font-size: 24px;
+    font-family: "Hanken Grotesk", sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    text-decoration: underline;
+}
+
+.contact-title {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+.contact-title .exploring,
+.contact-title .the-next,
+.contact-title .possibility {
+    position: relative;
+    font-size: 48px;
+    margin-bottom: 40px;
+    left: 0;
+}
+
+.contact-title .exploring {
+    top: 0;
+}
+
+.contact-title .the-next {
+    top: 0;
+}
+
+.contact-title .possibility {
+    bottom: 0;
+}
+
+.social-box a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.social-box i {
+    font-size: 24px;
+}
+
+.social-box:hover i {
+    color: white;
+}
+
+/* Add this class for hiding elements */
+.grid-box.hidden {
+    display: none;
+}
+
+/* Press page styles */
+.press-container {
+    width: 100vw;
+    display: flex;
+    margin-top: 10vh;
+}
+
+.press-left {
+    width: 30%;
+    background-color: #34c42f;
+    height: 90vh;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    border-right: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.press-title {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+.press-description {
+    padding: 0 40px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+}
+
+.press-right {
+    margin-left: 30%;
+    width: 70%;
+    min-height: 90vh;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.press-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 20px;
+}
+
+.press-box {
+    border: 1px solid #000;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.press-box.featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    min-height: 400px;
+}
+
+.press-image {
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #000;
+    overflow: hidden;
+}
+
+.press-box.featured .press-image {
+    width: 60%;
+    height: auto;
+    border-right: 1px solid #000;
+    border-bottom: none;
+}
+
+.press-box.featured .press-content {
+    width: 40%;
+}
+
+.press-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.press-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.press-date {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+}
+
+.press-content h3 {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.press-outlet {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.press-excerpt {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #666;
+}
+
+.press-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.press-link:hover {
+    color: #34c42f;
+}
+
+/* Update visuals title animations */
+.visuals-title div {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.visual-description {
+    transition: opacity 0.5s ease;
+}
+
+.visuals-title .exploring,
+.visuals-title .the-next,
+.visuals-title .possibility {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Update hiding footer styles */
+.hiding-footer {
+    position: fixed;
+    bottom: -25vh;
+    left: 0;
+    width: 100%;
+    background-color: #ffeb3b;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    height: 25vh;
+    transition: bottom 0.3s ease;
+    z-index: 999;
+}
+
+.hiding-footer.visible {
+    bottom: 0;
+}
+
+/* Keep all the existing footer content styles */
+.hiding-footer .footer-content,
+.hiding-footer .footer-schedule,
+.hiding-footer .social {
+    display: flex;
+    color: #000;
+}
+
+.hiding-footer .social-box {
+    border-left: 1px solid #000;
+}
+
+.hiding-footer .social-box:first-child {
+    border-bottom: 1px solid #000;
+}
+
+.hiding-footer a {
+    color: #000;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 1024px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .center-image {
+        max-width: 25%;
+    }
+
+    .exploring, .the-next, .possibility {
+        font-size: 36px;
+    }
+
+    .info h2 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .top-nav nav {
+        margin-top: 10px;
+    }
+
+    .top-nav nav a {
+        margin: 0 5px;
+        font-size: 12px;
+    }
+
+    .hero {
+        height: 50vh;
+        margin-top: 15vh;
+    }
+
+    .center-image {
+        max-width: 35%;
+    }
+
+    .exploring, .the-next, .possibility {
+        font-size: 28px;
+    }
+
+    /* Contact page */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-left {
+        width: 100%;
+        position: static;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .contact-right {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Press page */
+    .press-container {
+        flex-direction: column;
+    }
+
+    .press-left {
+        width: 100%;
+        position: static;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .press-right {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .press-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Visuals page */
+    .visuals-container {
+        flex-direction: column;
+    }
+
+    .visual-left {
+        width: 100%;
+        position: static;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .visual-right {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Discography page */
+    .discography-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    /* Mixes page */
+    .grid-mixes {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .footer-content, .footer-schedule {
+        width: 100%;
+        border: none;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .social {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .social-box {
+        height: 60px;
+        width: 60px;
+        border: none;
+    }
+
+    .hiding-footer {
+        height: auto;
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-nav nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero {
+        height: 40vh;
+        margin-top: 20vh;
+    }
+
+    .center-image {
+        max-width: 45%;
+    }
+
+    .exploring, .the-next, .possibility {
+        font-size: 24px;
+    }
+
+    .info h2 {
+        font-size: 24px;
+    }
+
+    .info-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .press-box.featured {
+        flex-direction: column;
+    }
+
+    .search-input {
+        width: 90%;
+    }
+}
