@@ -507,7 +507,7 @@ text-decoration: underline;
 .visual-right{
     margin-left: 30%;
     width: 70%;
-    min-height: 90vh;
+    min-height: 0vh;
     padding: 0 40px;
     background-color: #fff;
 }
