@@ -522,14 +522,21 @@
     document.addEventListener('DOMContentLoaded', function() {
         const footer = document.querySelector('.hiding-footer');
         let lastScrollY = window.scrollY;
+        let timeout;
         
         window.addEventListener('scroll', () => {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            
             if (window.scrollY > lastScrollY) {
-                // Scrolling down
+                // Scrolling down - hide immediately
                 footer.classList.remove('visible');
             } else {
-                // Scrolling up
-                footer.classList.add('visible');
+                // Scrolling up - show with slight delay
+                timeout = setTimeout(() => {
+                    footer.classList.add('visible');
+                }, 150);
             }
             lastScrollY = window.scrollY;
         });
@@ -537,7 +544,7 @@
         // Show footer initially after a small delay
         setTimeout(() => {
             footer.classList.add('visible');
-        }, 1000);
+        }, 500);
     });
     </script>
   </body>
