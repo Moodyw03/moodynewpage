@@ -7,17 +7,25 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="top-nav">
-      <a href="index.html" class="logo">MOODY WATERS</a>
-      <nav>
-        <a href="discography.html">DISCOGRAPHY</a>
-        <a href="mixes.html">MIXES</a>
-        <a href="visuals.html">VISUALS/VIDEO</a>
-        <a href="press.html">PRESS</a>
-        <a href="contact.html">CONTACT</a>
-      </nav>
-    </div>
-
+    <header>
+        <div class="top-nav">
+            <a href="index.html" class="logo">MOODY WATERS</a>
+            
+            <!-- Hamburger Icon -->
+            <div id="hamburger-menu" class="hamburger-menu">
+              <i class="fa-solid fa-bars hamburger-menu"></i>
+            </div>
+    
+            <!-- Navigation Menu -->
+            <nav>
+                <a href="./discography.html">DISCOGRAPHY</a>
+                <a href="./mixes.html">MIXES</a>
+                <a href="./visuals.html">VISUALS/VIDEO</a>
+                <a href="./press.html">PRESS</a>
+                <a href="./contact.html">CONTACT</a>
+            </nav>
+        </div>
+    </header>
     <!-- grid start -->
     <div class="search">
         <input type="text" id="searchInput" placeholder="Search albums..." class="search-input">
@@ -507,10 +515,10 @@
       </div>
       <div class="social">
         <div class="social-box">
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/moody_waters/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="social-box">
-          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.facebook.com/p/Moody-Waters-100063696242130" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
       </div>
     </footer>
@@ -547,5 +555,10 @@
         }, 500);
     });
     </script>
+   
+
+       <!-- External JavaScript file -->
+       <script src="menu.js"></script>
+       <script src="script.js"></script>
   </body>
 </html>

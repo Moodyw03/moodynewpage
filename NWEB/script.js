@@ -78,3 +78,6 @@ function changeTextOnHover(elementId, wordArray, offsetDelay = 0) {
 changeTextOnHover(".exploring", wordsExploring, 0); // First section changes immediately
 changeTextOnHover(".the-next", wordsTheNext, 250); // Second section changes after 250ms
 changeTextOnHover(".possibility", wordsPossibility, 500); // Third section changes after 500ms
+
+
+
