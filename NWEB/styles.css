@@ -262,6 +262,7 @@ footer {
   position: relative;
   padding: 20px;
   margin-bottom: 0;
+
 }
 
 .grid-box img {
@@ -296,7 +297,6 @@ footer {
   width: 300px;
   padding: 5px;
   margin-right: 10px;
-  margin-top: 10px;
   background: transparent;
 }
 
@@ -308,7 +308,6 @@ footer {
   color: #000;
   cursor: pointer;
   margin-left: 10px;
-  margin-top: 10px;
 }
 
 .albums {
@@ -916,18 +915,23 @@ footer {
   height: 90vh;
 }
 
-/* @media screen and (max-width: 2000px) {
-    footer{
-        height: 15vh;
-        background-color: #ff9500;
-    
-    }
-    } */
+@media screen and (min-width: 1367px) and (max-width: 2024px){
+
+  .grid-box {
+   max-height: 45vh;
+  }
+}
 
 @media screen and (max-width: 1366px) {
   footer {
     height: 25vh;
   }
+  .grid-box {
+    max-height: 60vh;
+   
+  }
+  
+  
 }
 
 /* Add responsive styles */
@@ -1257,8 +1261,11 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   /* Hide nav links by default on mobile */
+  header{
+    height: 10vh;
+  }
   .top-nav nav {
     display: none !important; /* Ensure nav is hidden on mobile */
     flex-direction: column;
@@ -1413,7 +1420,9 @@ footer {
     padding: 8px;
   }
   footer {
-    max-height: 45vh;
+    min-height: 50vh;
+    height: auto;
+   
   }
   .social-box:first-child {
     border-bottom: none;
