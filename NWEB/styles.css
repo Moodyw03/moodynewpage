@@ -122,7 +122,7 @@ header {
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 14px;
   border-top: 1px solid #000;
-  padding-top: 30px;
+  padding-top: 20px;
   box-sizing: border-box;
 }
 
@@ -170,7 +170,7 @@ footer {
   background-color: #34c42f;
   width: 100%;
   margin-top: auto;
-max-height: 25vh;
+  max-height: 25vh;
 }
 
 .footer-content {
@@ -223,8 +223,6 @@ max-height: 25vh;
   align-items: center;
   border-left: 1px solid #000;
 }
-
-
 
 .social-box a {
   color: inherit;
@@ -296,9 +294,9 @@ max-height: 25vh;
   font-size: 20px;
   font-family: "Hanken Grotesk", sans-serif;
   width: 300px;
-  padding: 20px;
-  margin-top: 10px;
+  padding: 5px;
   margin-right: 10px;
+  margin-top: 10px;
   background: transparent;
 }
 
@@ -918,7 +916,6 @@ max-height: 25vh;
   height: 90vh;
 }
 
-
 /* @media screen and (max-width: 2000px) {
     footer{
         height: 15vh;
@@ -928,10 +925,9 @@ max-height: 25vh;
     } */
 
 @media screen and (max-width: 1366px) {
-footer{
+  footer {
     height: 25vh;
- 
-}
+  }
 }
 
 /* Add responsive styles */
@@ -1186,7 +1182,6 @@ footer{
     padding: 20px 0;
     width: 100%;
     box-sizing: border-box;
-  
   }
 
   .footer-content,
@@ -1195,14 +1190,12 @@ footer{
     border: none;
     padding: 20px 0px;
     text-align: center;
-    
   }
 
   .social {
     flex-direction: row;
     justify-content: center;
     padding: 0;
-  
   }
 
   .social-box {
@@ -1212,7 +1205,7 @@ footer{
     padding: 0;
   }
   .social-box:first-child {
-    border-bottom:none;
+    border-bottom: none;
   }
 
   .hiding-footer {
@@ -1251,7 +1244,6 @@ footer{
   .contact-right form {
     margin-right: 60px;
   }
- 
 }
 
 /* Media query for iPad Mini in landscape mode */
@@ -1272,7 +1264,6 @@ footer{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-   
   }
 
   .hamburger-menu {
@@ -1421,13 +1412,12 @@ footer{
     width: 95%;
     padding: 8px;
   }
-  footer{
-    max-height: 40vh;
+  footer {
+    max-height: 45vh;
   }
   .social-box:first-child {
     border-bottom: none;
   }
-
 }
 
 /* tilted phone */
@@ -1494,6 +1484,33 @@ footer{
   }
 }
 
+
+/* Media query for iphone 14 pro max landscape mode */
+@media only screen and (min-device-width: 430px) and (max-device-width: 932px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+footer{
+  max-height: 60vh;
+}
+}
+
+
+/* Media query for iphone 13 pro max landscape mode */
+@media only screen and (min-device-width: 426px) and (max-device-width: 926px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+  footer{
+    max-height: 80vh;
+  }
+  header{
+    height: 10vh;
+   
+  }
+  }
+
+
+@media screen and (max-device-width: 400px) {
+  .info {
+    height: 80vh;
+  }
+}
+
 .form-status {
   margin: 10px 0;
   padding: 10px;
@@ -1519,11 +1536,7 @@ footer{
   color: white;
 }
 
-@media screen and (max-device-width: 400px) {
-  .info {
-    height: 80vh;
-  }
-}
+
 
 /* Update press box layout proportions */
 /* .press-box {
