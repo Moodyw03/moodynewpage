@@ -204,6 +204,7 @@ footer {
   color: #000;
   margin: 5px 0;
   font-size: 14px;
+  margin: 2px 0; /* Reduced margin */
 }
 
 .footer-schedule a:hover {
@@ -1456,7 +1457,38 @@ footer {
   }
 
   .grid-box {
-    height: 80vh;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .grid-box img {
+    width: 80%;
+    height: 50%;
+    object-fit: contain;
+    margin: 10px auto;
+  }
+
+  .albums {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 10px auto;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .album-title, .buy {
+    margin: 5px 0;
+    font-size: 12px;
+  }
+
+  .album-title p, .buy p {
+    margin: 2px 0;
+    line-height: 1.2;
   }
 
   .mix-title .exploring {
