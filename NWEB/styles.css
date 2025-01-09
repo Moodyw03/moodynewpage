@@ -271,7 +271,15 @@ footer {
   height: 70%;
   object-fit: contain;
   display: block;
-  margin: 20px auto;
+  margin: 10px auto; /* Reduced margin */
+}
+
+.album-title p {
+  margin: 5px 0; /* Reduce the margin for the album text */
+}
+
+.grid-box {
+  padding: 10px; /* Adjust the padding of the grid box if needed */
 }
 
 .search {
