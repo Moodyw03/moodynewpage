@@ -1561,7 +1561,60 @@ footer{
   max-height: 60vh;
 }
 }
+/* iPhone 12 Pro Max specific fix */
+@media only screen 
+and (device-width: 428px) 
+and (device-height: 926px) 
+and (-webkit-device-pixel-ratio: 3) {
+  .hero {
+    height: 65vh;
+    position: relative;
+  }
 
+  .exploring {
+    top: 15%;
+  }
+
+  .the-next {
+    top: 35%;
+  }
+
+  .possibility {
+    bottom: 35%;
+  }
+
+  .info-bottom {
+    bottom: 10%;
+    padding: 15px 40px;
+  }
+}
+
+/* Additional iPhone 12 Pro specific adjustments */
+@media only screen 
+and (device-width: 390px) 
+and (device-height: 844px) 
+and (-webkit-device-pixel-ratio: 3) {
+  .hero {
+    height: 60vh;
+  }
+
+  .exploring {
+    top: 20%;
+  }
+
+  .the-next {
+    top: 45%;
+  }
+
+  .possibility {
+    bottom: 30%;
+  }
+
+  .info-bottom {
+    bottom: 15%;
+    padding: 10px 40px;
+  }
+}
 
 /* Media query for iphone 13 pro max landscape mode */
 @media only screen and (min-device-width: 426px) and (max-device-width: 926px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
