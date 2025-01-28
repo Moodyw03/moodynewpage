@@ -1335,7 +1335,7 @@ footer {
   .exploring,
   .the-next,
   .possibility {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .exploring {
@@ -1801,5 +1801,82 @@ footer{
   .hamburger-menu {
     display: block;
     z-index: 1001;
+  }
+}
+
+/* iPhone SE Specific Styles */
+@media screen and (max-width: 375px) {
+  header {
+    height: 8vh !important;
+  }
+
+  .logo {
+    font-size: 16px !important;
+  }
+
+  .hamburger-menu {
+    font-size: 18px !important;
+  }
+
+  .hero {
+    height: 60vh;
+    margin-top: 8vh;
+  }
+
+  .exploring,
+  .the-next,
+  .possibility {
+    font-size: 28px !important;
+  }
+
+  .exploring {
+    top: 10% !important;
+    left: 5% !important;
+  }
+
+  .the-next {
+    top: 40% !important;
+    right: 5% !important;
+  }
+
+  .possibility {
+    bottom: 30% !important;
+    left: 5% !important;
+  }
+
+  .info h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+
+  .links a {
+    font-size: 28px !important;
+  }
+
+  .footer-schedule a {
+    font-size: 12px !important;
+    margin: 1px 0 !important;
+  }
+
+  .social-box {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .social-box i {
+    font-size: 20px !important;
+  }
+
+  .info {
+    padding: 20px 15px !important;
+  }
+
+  .info-bottom {
+    padding: 0 15px !important;
+  }
+
+  .info-bottom .location,
+  .info-bottom .date {
+    font-size: 12px !important;
   }
 }
