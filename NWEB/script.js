@@ -78,3 +78,72 @@ function changeTextOnHover(elementId, wordArray, offsetDelay = 0) {
 changeTextOnHover(".exploring", wordsExploring, 0); // First section changes immediately
 changeTextOnHover(".the-next", wordsTheNext, 250); // Second section changes after 250ms
 changeTextOnHover(".possibility", wordsPossibility, 500); // Third section changes after 500ms
+
+function adjustHeroLayout() {
+  const hero = document.querySelector(".hero");
+  const infoBottom = document.querySelector(".info-bottom");
+  const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+  const is14ProMax = window.innerWidth >= 414 && window.innerWidth <= 430;
+
+  // 14 Pro Max specific adjustments
+  if (is14ProMax && !isLandscape) {
+    const heroHeight = hero.offsetHeight;
+
+    // Calculate dynamic spacing based on viewport height
+    const vh = window.innerHeight * 0.01;
+    const textSpacing = 8 * vh; // 8vh between text elements
+
+    const textPositions = {
+      exploring: 0.12 * heroHeight,
+      theNext: 0.12 * heroHeight + textSpacing,
+      possibility: 0.12 * heroHeight + textSpacing * 2,
+    };
+
+    Object.entries(textPositions).forEach(([cls, position]) => {
+      const el = document.querySelector(`.${cls}`);
+      if (el) {
+        el.style.top = `${position}px`;
+        el.style.transform = "translateY(0)";
+      }
+    });
+
+    // More aggressive spacing adjustments
+    infoBottom.style.bottom = `${5 * vh}px`; // 5vh from bottom
+    hero.style.paddingBottom = `${2 * vh}px`; // 2vh padding
+    hero.style.minHeight = `${window.innerHeight - 15 * vh}px`; // Reserve space
+  }
+
+  // Universal vertical centering
+  const centerElements = () => {
+    const heroHeight = hero.offsetHeight;
+
+    ["exploring", "the-next", "possibility"].forEach((cls, idx) => {
+      const el = document.querySelector(`.${cls}`);
+      if (el) {
+        const offset = isLandscape ? 0.15 + idx * 0.25 : 0.2 + idx * 0.25;
+        el.style.top = `${heroHeight * offset}px`;
+      }
+    });
+  };
+
+  // Adjust info-bottom position
+  if (isLandscape) {
+    infoBottom.style.bottom = "5%";
+  } else {
+    if (window.innerWidth <= 390) {
+      infoBottom.style.bottom = "7%";
+    }
+  }
+
+  centerElements();
+}
+
+// Optimized resize handler
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(adjustHeroLayout, 100);
+});
+
+// Initial setup
+window.addEventListener("load", adjustHeroLayout);

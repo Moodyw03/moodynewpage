@@ -1,0 +1,164 @@
+/* Base styles for all devices */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-bottom {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* iPhone 14 Pro Max Portrait */
+@media (max-width: 430px) and (orientation: portrait) {
+    .hero {
+        min-height: 97vh;
+    }
+    .info-bottom {
+        bottom: 15% !important;
+        padding: 0 25px;
+    }
+    .exploring { top: 22% !important }
+    .the-next { top: 48% !important }
+    .possibility { bottom: 30% !important }
+}
+
+/* iPhone 12 Pro (90.7% scale of 14 Pro Max) */
+@media (max-width: 390px) and (orientation: portrait) {
+    .hero {
+        min-height: calc(100vh * 0.907);
+    }
+    .exploring { top: 20% }
+    .the-next { top: 45% }
+    .possibility { bottom: 25% }
+    .info-bottom {
+        padding: 0 15px;
+        bottom: 7%;
+    }
+}
+
+/* Landscape adjustments for both devices */
+@media (orientation: landscape) {
+    .hero {
+        min-height: 60vh;
+        padding-top: 5vh;
+    }
+    .info-bottom {
+        bottom: 5% !important;
+    }
+    .exploring { top: 15% !important }
+    .the-next { top: 35% !important }
+    .possibility { bottom: 20% !important }
+}
+
+/* Existing 14 Pro Max styles */
+@media (max-width: 430px) and (orientation: portrait) {
+    .main-container {
+        padding: 20px;
+    }
+    .hero {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .info-bottom {
+        bottom: 7% !important;
+        padding: 0 20px;
+    }
+    .exploring,
+    .the-next,
+    .possibility {
+        transform: translateY(-50%);
+        position: absolute;
+        width: 100%;
+    }
+}
+
+/* New 12 Pro Portrait */
+@media (max-width: 390px) and (orientation: portrait) {
+    .main-container {
+        padding: 15px;
+    }
+    .hero {
+        min-height: 65vh;
+    }
+    .info-bottom {
+        bottom: 10% !important;
+    }
+}
+
+/* Existing 14 Pro Max Landscape */
+@media (max-height: 430px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 55vh;
+        margin-bottom: 2rem;
+    }
+    .info-bottom-section {
+        padding-top: 1.5rem;
+    }
+}
+
+/* New 12 Pro Landscape */
+@media (max-height: 390px) and (orientation: landscape) {
+    .hero-section {
+        min-height: calc(55vh * 0.9);
+        margin-bottom: 1.8rem;
+    }
+    .info-bottom-section {
+        padding-top: 1.35rem;
+    }
+    h1 {
+        font-size: calc(1.6rem * 0.9);
+    }
+}
+
+/* Landscape adjustments */
+@media (max-height: 844px) and (orientation: landscape) { /* 12 Pro */
+    .hero {
+        min-height: 50vh !important;
+    }
+    .info-bottom {
+        bottom: 8% !important;
+    }
+}
+
+@media (max-height: 932px) and (orientation: landscape) { /* 14 Pro Max */
+    .hero {
+        min-height: 60vh !important;
+    }
+}
+
+/* Force position update on resize */
+@media (max-width: 390px) and (orientation: portrait) {
+    .hero {
+        transform: translateZ(0);
+        will-change: transform;
+    }
+}
+
+/* Landscape Universal Adjustments */
+@media (orientation: landscape) {
+    .hero {
+        min-height: 55vh !important;
+        padding-top: 5vh;
+    }
+    .exploring {
+        top: 15% !important;
+    }
+    .the-next {
+        top: 35% !important;
+    }
+    .possibility {
+        bottom: 25% !important;
+    }
+    .info-bottom {
+        bottom: 5% !important;
+        padding: 0 10px !important;
+    }
+} 
