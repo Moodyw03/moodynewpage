@@ -1,3 +1,5 @@
+console.log("Mixes Search JS Version 1.1");
+
 document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("searchInput");
   const mixBoxes = document.querySelectorAll(".gridbox-mixes:not(.big-one)");
