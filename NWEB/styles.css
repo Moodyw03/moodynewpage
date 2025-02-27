@@ -49,6 +49,8 @@ header {
 .hamburger-menu {
   display: none;
   cursor: pointer;
+  z-index: 1010;
+  position: relative;
 }
 
 .hero {
@@ -858,17 +860,13 @@ footer {
 
 /* Update hiding footer styles */
 .hiding-footer {
+  background-color: #FFFF00; /* Pure bright yellow color as requested */
+  color: #000; /* Black text for better contrast on yellow */
   position: fixed;
-  bottom: -25vh;
+  bottom: -100px;
   left: 0;
   width: 100%;
-  background-color: #ffeb3b;
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #000;
-  height: 25vh;
   transition: bottom 0.3s ease;
-  z-index: 999;
 }
 
 .hiding-footer.visible {
@@ -1311,16 +1309,40 @@ footer {
 
   /* Show menu when the active class is added */
   .top-nav nav.active {
-    position: absolute;
-    top: 8vh;
+    position: fixed;
+    top: 10vh;
     left: 0;
     background-color: #fff;
     width: 100%;
-    padding: 15px;
+    padding: 20px;
     box-sizing: border-box;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex !important;
     flex-direction: column;
+    z-index: 1005;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  /* Improve spacing between nav items */
+  .top-nav nav.active a {
+    margin: 12px 0;
+    padding: 8px 0;
+    font-size: 18px;
+  }
+  
+  /* Ensure content doesn't appear on top of menu */
+  body.menu-open .hero,
+  body.menu-open .discography-grid,
+  body.menu-open .search,
+  body.menu-open .grid-mixes,
+  body.menu-open .press-container,
+  body.menu-open .visuals-container,
+  body.menu-open .contact-container {
+    filter: blur(3px);
+    transition: filter 0.3s ease;
   }
 
   .hero {
@@ -1329,7 +1351,7 @@ footer {
   }
 
   .center-image {
-    max-width: 45%;
+    max-width: 35%;
   }
 
   .exploring,
@@ -1532,10 +1554,6 @@ footer {
     bottom: 10%;
     left: 5%;
     font-size: 50px;
-  }
-
-  .gridbox-mixes a {
-    font-size: 20px;
   }
 
   .visuals-title .exploring,
@@ -1878,5 +1896,209 @@ footer{
   .info-bottom .location,
   .info-bottom .date {
     font-size: 12px !important;
+  }
+}
+
+/* Specific fix for iPhone 13 Pro Max */
+@media only screen and (min-device-width: 390px) and (max-device-width: 428px) and (min-device-height: 800px) and (max-device-height: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+  .hero {
+    height: 70vh;
+    margin-top: 12vh;
+    position: relative;
+  }
+  
+  .exploring {
+    top: 15%;
+    left: 5%;
+    font-size: 32px;
+  }
+  
+  .the-next {
+    top: 40%;
+    right: 5%;
+    font-size: 32px;
+  }
+  
+  .possibility {
+    bottom: 25%;
+    left: 5%;
+    font-size: 32px;
+  }
+  
+  .info-bottom {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .grid-box {
+    height: auto;
+    min-height: 400px;
+    padding-bottom: 80px;
+    position: relative;
+  }
+  
+  .grid-box img {
+    max-height: 60%;
+    width: auto;
+    margin: 20px auto;
+  }
+  
+  .albums {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 90%;
+    margin: 15px auto;
+  }
+  
+  .album-title {
+    width: 60%;
+  }
+}
+
+/* General mobile display fixes */
+@media screen and (max-width: 480px) {
+  /* Prevent text overflow in all containers */
+  * {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  /* Fix for the footer on mobile */
+  footer {
+    padding: 20px 10px;
+  }
+  
+  /* Better spacing for grid boxes */
+  .discography-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Improve search bar responsiveness */
+  .search {
+    height: auto;
+    min-height: 50px;
+    padding: 10px 15px;
+  }
+  
+  .search-input {
+    width: 80%;
+    margin-right: 5px;
+  }
+}
+
+/* Add visible class for footer display toggle */
+.hiding-footer {
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  transition: bottom 0.3s ease;
+}
+
+.hiding-footer.visible {
+  bottom: 0;
+}
+
+/* iPhone 13/12 Pro Max specific styles in portrait mode */
+@media only screen and (min-device-width: 390px) and (max-device-width: 428px) and (min-device-height: 844px) and (max-device-height: 926px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
+  /* Hero section fixes */
+  .hero {
+    height: 60vh;
+    overflow: visible;
+    margin-top: 12vh;
+    position: relative;
+  }
+  
+  .exploring {
+    top: 15%;
+    left: 5%;
+    font-size: 30px;
+  }
+  
+  .the-next {
+    top: 40%;
+    right: 5%;
+    font-size: 30px;
+  }
+  
+  .possibility {
+    bottom: 25%;
+    left: 5%;
+    font-size: 30px;
+  }
+  
+  .info-bottom {
+    position: relative;
+    margin-top: 20px;
+    bottom: auto;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info-bottom .location,
+  .info-bottom .date {
+    max-width: 100%;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* Discography grid fixes */
+  .grid-box {
+    height: auto;
+    min-height: 400px;
+    padding-bottom: 80px;
+    position: relative;
+  }
+  
+  .grid-box img {
+    width: auto;
+    max-width: 80%;
+    max-height: 60%;
+    margin: 20px auto;
+    object-fit: contain;
+  }
+  
+  .albums {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 90%;
+    margin: 15px auto;
+  }
+  
+  .album-title {
+    width: 60%;
+  }
+  
+  .buy {
+    width: 40%;
+  }
+}
+
+/* Fix for older iPhones and generic small screens */
+@media screen and (max-width: 414px) {
+  .grid-box {
+    height: auto;
+    min-height: 350px;
+    padding-bottom: 70px;
+  }
+  
+  .grid-box img {
+    margin-top: 30px;
+    max-height: 200px;
+  }
+  
+  .albums {
+    width: 95%;
   }
 }
