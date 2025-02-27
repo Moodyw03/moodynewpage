@@ -519,10 +519,16 @@
             if (window.scrollY > lastScrollY) {
                 // Scrolling down - hide immediately
                 footer.classList.remove('visible');
+                footer.style.opacity = "0";
+                footer.style.visibility = "hidden";
+                footer.style.pointerEvents = "none";
             } else {
                 // Scrolling up - show with slight delay
                 timeout = setTimeout(() => {
                     footer.classList.add('visible');
+                    footer.style.opacity = "1";
+                    footer.style.visibility = "visible";
+                    footer.style.pointerEvents = "auto";
                 }, 150);
             }
             lastScrollY = window.scrollY;
@@ -531,6 +537,9 @@
         // Show footer initially after a small delay
         setTimeout(() => {
             footer.classList.add('visible');
+            footer.style.opacity = "1";
+            footer.style.visibility = "visible";
+            footer.style.pointerEvents = "auto";
         }, 500);
     });
     </script>

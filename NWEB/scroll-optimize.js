@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!ticking) {
           window.requestAnimationFrame(function () {
             // Optimize footer visibility
-            const footer = document.querySelector("footer");
+            const footer = document.querySelector("footer:not(.hiding-footer)");
             if (footer) {
               if (lastScroll > 100) {
                 footer.style.transform = "translateY(100%)";

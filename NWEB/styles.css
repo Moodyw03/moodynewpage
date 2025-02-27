@@ -858,50 +858,75 @@ footer {
   transition: all 0.3s ease;
 }
 
-/* Update hiding footer styles - this should be the only .hiding-footer definition */
+/* Update hiding footer styles to match regular footer exactly */
 .hiding-footer {
-  background-color: #FFFF00;
+  background-color: #FFFF00; /* Match the yellow color */
   color: #000;
   position: fixed;
   bottom: -300px;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 25vh; /* Set exact height to match regular footer */
   max-height: 25vh;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateZ(0) translateY(20px);
-  will-change: transform, bottom, opacity;
+  min-height: 150px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px) translateZ(0);
+  will-change: transform, opacity;
   z-index: 999;
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
-  visibility: hidden; /* Add visibility property for better hiding */
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #000; /* Add border to match regular footer */
 }
 
 .hiding-footer.visible {
   bottom: 0;
-  transform: translateZ(0) translateY(0);
+  transform: translateY(0) translateZ(0);
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
 }
 
-/* Ensure footer content doesn't peek through */
-.hiding-footer .footer-content,
-.hiding-footer .footer-schedule,
-.hiding-footer .social {
+/* Ensure footer content has consistent sizing */
+.hiding-footer .footer-content {
+  flex: 1;
+  padding: 15px;
+  width: 50%; /* Match regular footer width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   opacity: 1;
   transition: opacity 0.2s ease;
 }
 
-.hiding-footer:not(.visible) .footer-content,
-.hiding-footer:not(.visible) .footer-schedule,
-.hiding-footer:not(.visible) .social {
-  opacity: 0;
-  transition: opacity 0.1s ease;
+/* Match footer schedule styling exactly */
+.hiding-footer .footer-schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 30px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  width: auto; /* Match regular footer width */
+}
+
+/* Match social styling */
+.hiding-footer .social {
+  display: flex;
+  flex-direction: column;
 }
 
 .hiding-footer .social-box {
+  height: 50%;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-left: 1px solid #000;
 }
 
@@ -909,8 +934,23 @@ footer {
   border-bottom: 1px solid #000;
 }
 
-.hiding-footer a {
-  color: #000;
+.hiding-footer .social-box a {
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiding-footer .social-box i {
+  font-size: 24px;
+}
+
+.hiding-footer .social-box:hover {
+  background-color: #000000;
+  color: white;
 }
 
 .hidden {
@@ -1270,9 +1310,8 @@ footer {
   }
 
   .press-image {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #000;
+    width: 100% !important;
+    height: 200px !important;
   }
 
   .press-content {
