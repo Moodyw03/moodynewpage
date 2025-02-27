@@ -789,9 +789,10 @@ footer {
 }
 
 .press-image {
-  width: 40%;
-  height: auto;
-  border-right: 1px solid #000;
+  width: 100% !important;
+  height: 200px !important;
+  border-right: none;
+  border-bottom: 1px solid #000;
 }
 
 .press-image img {
@@ -801,8 +802,8 @@ footer {
 }
 
 .press-content {
-  width: 60%;
-  padding: 30px;
+  width: 100%;
+  padding: 15px;
 }
 
 .scrollable-content {
@@ -961,6 +962,9 @@ footer {
 
 .hiding-footer .social-box i {
   font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hiding-footer .social-box:hover {
@@ -1199,15 +1203,12 @@ footer {
   }
 
   .press-image {
-    width: 100%;
-    height: 200px;
-    border-right: none;
-    border-bottom: 1px solid #000;
+    width: 100% !important;
+    height: 200px !important;
   }
 
   .press-content {
     width: 100%;
-    padding: 15px;
   }
 
   .press-title div {
@@ -1343,37 +1344,46 @@ footer {
     height: 25vh;
     max-height: 25vh;
     padding: 20px 0;
-  }
-  .press-box {
     flex-direction: column;
-    min-height: auto;
   }
-
-  .press-image {
-    width: 100% !important;
-    height: 200px !important;
-  }
-
-  .press-content {
+  
+  /* Match mobile footer styles for hiding-footer */
+  .hiding-footer .footer-content,
+  .hiding-footer .footer-schedule {
     width: 100%;
+    border: none;
+    padding: 20px 0px;
+    text-align: center;
   }
-  .press-left {
-    height: 40vh;
+  
+  .hiding-footer .social {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    gap: 10px;
   }
-  .press-grid {
-    padding-right: 50px;
+  
+  .hiding-footer .social-box {
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-bottom: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-  .contact-left {
-    height: 40vh;
+  
+  .hiding-footer .social-box:first-child {
+    border-bottom: none;
   }
-
-  .contact-right {
-    height: 60vh;
-  }
-
-  .contact-right form {
-    margin-right: 60px;
+  
+  .hiding-footer .social-box i {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -1999,6 +2009,44 @@ footer {
     width: 100%;
     padding: 10px 0;
   }
+  
+  /* Apply the same styles to hiding-footer */
+  .hiding-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .hiding-footer .social {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    padding: 15px 0;
+    margin: 0 auto;
+  }
+  
+  .hiding-footer .social-box {
+    height: 45px;
+    width: 45px;
+    margin: 0;
+    border: none;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hiding-footer .social-box i {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* iPhone 13/12 Pro Max specific styles */
@@ -2119,4 +2167,9 @@ footer {
   display: block;
   background-color: #007aff;
   color: white;
+}
+
+.press-box {
+  flex-direction: column;
+  min-height: auto;
 }
