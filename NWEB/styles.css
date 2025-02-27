@@ -61,6 +61,7 @@ header {
   justify-content: center;
   align-items: center;
   margin-top: 10vh;
+  margin-bottom: 60px;
 }
 
 .exploring,
@@ -114,9 +115,9 @@ header {
 }
 
 .info-bottom {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
+  position: relative;
+  bottom: auto;
+  left: auto;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -126,6 +127,7 @@ header {
   border-top: 1px solid #000;
   padding-top: 20px;
   box-sizing: border-box;
+  margin-top: 20px;
 }
 
 .info-bottom .location,
@@ -986,29 +988,30 @@ footer {
   height: 90vh;
 }
 
-@media screen and (min-width: 1367px) and (max-width: 2024px){
-
+/* ===== ORGANIZED MEDIA QUERIES ===== */
+/* Large Desktops */
+@media screen and (min-width: 1367px) and (max-width: 2024px) {
   .grid-box {
-   max-height: 45vh;
+    max-height: 45vh;
   }
 }
 
+/* Desktops and Laptops */
 @media screen and (max-width: 1366px) {
   footer {
     height: 25vh;
   }
   .grid-box {
     max-height: 60vh;
-   
   }
-  
-  
 }
 
-/* Add responsive styles */
+/* Tablets and Small Laptops */
 @media screen and (max-width: 1024px) {
   .hero {
     height: 50vh;
+    margin-top: 15vh;
+    margin-bottom: 40px;
   }
 
   .contact-right {
@@ -1062,6 +1065,7 @@ footer {
   }
 }
 
+/* iPad and Similar Tablets */
 @media screen and (max-width: 820px) {
   .visuals-title .exploring,
   .visuals-title .the-next,
@@ -1074,6 +1078,18 @@ footer {
   }
 }
 
+/* Tablets in Landscape */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  header {
+    height: 10vh;
+  }
+
+  .grid-box {
+    height: 45vh;
+  }
+}
+
+/* Tablets and Large Phones */
 @media screen and (max-width: 768px) {
   header {
     height: 10vh;
@@ -1098,6 +1114,7 @@ footer {
   .hero {
     height: 50vh;
     margin-top: 15vh;
+    margin-bottom: 40px;
   }
 
   .center-image {
@@ -1337,20 +1354,10 @@ footer {
   }
 }
 
-/* Media query for iPad Mini in landscape mode */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  header {
-    height: 10vh;
-  }
-
-  .grid-box {
-    height: 45vh;
-  }
-}
-
+/* Medium-sized Phones and Tablets */
 @media screen and (max-width: 700px) {
   /* Hide nav links by default on mobile */
-  header{
+  header {
     height: 10vh;
   }
   .top-nav nav {
@@ -1364,6 +1371,7 @@ footer {
     display: block; /* Show hamburger icon on mobile */
     font-size: 20px;
     margin-top: 10px;
+    z-index: 1001;
   }
 
   /* Show menu when the active class is added */
@@ -1387,9 +1395,9 @@ footer {
   
   /* Improve spacing between nav items */
   .top-nav nav.active a {
-    margin: 12px 0;
-    padding: 8px 0;
-    font-size: 18px;
+    display: block;
+    margin: 15px 0;
+    font-size: 16px;
   }
   
   /* Ensure content doesn't appear on top of menu */
@@ -1407,6 +1415,7 @@ footer {
   .hero {
     height: 40vh;
     margin-top: 20vh;
+    margin-bottom: 30px;
   }
 
   .center-image {
@@ -1472,6 +1481,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    padding: 15px 20px;
   }
 
   .contact-form {
@@ -1533,25 +1543,27 @@ footer {
   footer {
     min-height: 50vh;
     height: auto;
-   
   }
   .social-box:first-child {
     border-bottom: none;
   }
 }
 
-/* tilted phone */
-@media only screen and (min-device-width: 430px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+/* Landscape Mode for Mobile Devices */
+@media only screen and (orientation: landscape) and (max-width: 932px) {
   header {
     height: 12vh;
   }
 
   .hero {
     height: 90vh;
+    margin-bottom: 20px;
   }
 
   .info-bottom {
-    height: 15vh;
+    height: auto;
+    position: relative;
+    margin-top: 15px;
   }
 
   .info {
@@ -1560,6 +1572,7 @@ footer {
 
   footer {
     height: 40vh;
+    max-height: 80vh;
   }
 
   .grid-box {
@@ -1631,86 +1644,44 @@ footer {
   }
 }
 
-
-/* Media query for iphone 14 pro max landscape mode */
-@media only screen and (min-device-width: 430px) and (max-device-width: 932px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-footer{
-  max-height: 60vh;
-}
-}
-
-/* Comprehensive fix for iPhone 12/13 Pro in portrait mode with JS animations */
-@media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (min-device-height: 800px) and (max-device-height: 926px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
-  /* Create more space for the hero section */
-  .hero {
-    height: auto; /* Change from fixed height to auto */
-    min-height: 50vh; /* Minimum height */
-    max-height: 60vh; /* Maximum height */
-    margin-top: 12vh;
-    margin-bottom: 15vh; /* Add bottom margin to create space */
-    position: relative;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* Small Phones */
+@media screen and (max-width: 480px) {
+  /* Prevent text overflow in all containers */
+  * {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   
-  /* Ensure text elements have enough space and don't overlap */
-  .exploring, .the-next, .possibility {
-    position: relative; /* Change from absolute to relative */
-    margin: 20px 0; /* Add vertical margin */
-    font-size: 28px;
-    transform: none !important; /* Override any transform from JS */
-    animation: none !important; /* Disable floating animation on mobile */
+  /* Fix for the footer on mobile */
+  footer {
+    padding: 20px 10px;
   }
   
-  .exploring {
-    align-self: flex-start;
-    margin-left: 5%;
+  /* Better spacing for grid boxes */
+  .discography-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   
-  .the-next {
-    align-self: flex-end;
-    margin-right: 5%;
+  /* Improve search bar responsiveness */
+  .search {
+    height: auto;
+    min-height: 50px;
+    padding: 10px 15px;
   }
   
-  .possibility {
-    align-self: flex-start;
-    margin-left: 5%;
+  .search-input {
+    width: 80%;
+    margin-right: 5px;
   }
   
-  /* Completely separate info-bottom from hero section */
-  .info-bottom {
-    position: static; /* Remove positioning */
-    margin-top: 30px; /* Space after hero section */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 20px;
-    gap: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Add slight background */
-    z-index: 5; /* Ensure it's above other elements */
-  }
-  
-  /* Make text in info-bottom more readable */
-  .info-bottom .location,
-  .info-bottom .date {
-    text-align: center;
-    font-size: 14px;
-    max-width: 100%;
-    white-space: normal;
-    padding: 5px 0;
-  }
-  
-  /* Add specific override for any JS animation effects */
-  .hero * {
-    transform: none !important; /* Force override any transform */
+  .album-title {
+    width: 60%;
   }
 }
 
-/* Add this to ensure JS animations don't cause layout issues on small screens */
+/* iPhone and Similar Devices */
 @media screen and (max-width: 428px) {
   /* Disable floating animation on small screens */
   @keyframes float {
@@ -1723,107 +1694,12 @@ footer{
   }
 }
 
-
-/* Media query for iphone 13 pro max landscape mode */
-@media only screen and (min-device-width: 426px) and (max-device-width: 926px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
-  footer{
-    max-height: 80vh;
-  }
-  header{
-    height: 10vh;
-   
-  }
-  }
-
-
-@media screen and (max-device-width: 400px) {
-  .info {
-    height: 80vh;
-  }
-
-  .social {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 15px;
-    padding: 15px 0;
-    margin: 0 auto;
-  }
-
-  .social-box {
-    height: 45px;
-    width: 45px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .social-box i {
-    font-size: 20px;
-  }
-
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 10px 0;
-  }
-}
-
-.form-status {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 4px;
-  display: none;
-}
-
-.form-status.success {
-  display: block;
-  background-color: #34c42f;
-  color: white;
-}
-
-.form-status.error {
-  display: block;
-  background-color: #ff3b30;
-  color: white;
-}
-
-.form-status.sending {
-  display: block;
-  background-color: #007aff;
-  color: white;
-}
-
-
-
-/* Update press box layout proportions */
-/* .press-box {
-    display: flex;
-    border: 1px solid #ddd;
-    min-height: 400px;
-    flex-direction: row;
-}
-
-.press-image {
-    width: 40%;
-    height: auto;
-    border-right: 1px solid #000;
-}
-
-.press-content {
-    width: 60%;
-    padding: 30px;
-}
- */
-
+/* Extra Small Devices */
 @media screen and (max-width: 414px) {
   .hero {
     height: 60vh;
     margin-top: 8vh;
+    margin-bottom: 25px;
   }
 
   .exploring,
@@ -1872,9 +1748,10 @@ footer{
   }
 
   .info-bottom {
-    padding: 0 15px;
+    padding: 10px 15px;
     flex-direction: column;
     gap: 10px;
+    margin-top: 15px;
   }
 
   .info-bottom .location,
@@ -1882,6 +1759,8 @@ footer{
     font-size: 14px;
     max-width: 100%;
     padding: 5px;
+    text-align: center;
+    white-space: normal;
   }
 
   .discography-grid {
@@ -1945,222 +1824,129 @@ footer{
   }
 }
 
-@media screen and (max-width: 700px) {
-  .top-nav nav.active {
-    width: 100%;
-    left: 0;
-    padding: 20px;
-    background: white;
+/* iPhone SE and Similar Small Devices */
+@media screen and (max-width: 375px) {
+  header {
+    height: 8vh;
   }
 
-  .top-nav nav a {
-    display: block;
-    margin: 15px 0;
+  .logo {
     font-size: 16px;
   }
 
   .hamburger-menu {
-    display: block;
-    z-index: 1001;
-  }
-}
-
-/* iPhone SE Specific Styles */
-@media screen and (max-width: 375px) {
-  header {
-    height: 8vh !important;
-  }
-
-  .logo {
-    font-size: 16px !important;
-  }
-
-  .hamburger-menu {
-    font-size: 18px !important;
+    font-size: 18px;
   }
 
   .hero {
     height: 60vh;
     margin-top: 8vh;
+    margin-bottom: 20px;
   }
 
   .exploring,
   .the-next,
   .possibility {
-    font-size: 28px !important;
+    font-size: 28px;
   }
 
   .exploring {
-    top: 10% !important;
-    left: 5% !important;
+    top: 10%;
+    left: 5%;
   }
 
   .the-next {
-    top: 40% !important;
-    right: 5% !important;
+    top: 40%;
+    right: 5%;
   }
 
   .possibility {
-    bottom: 30% !important;
-    left: 5% !important;
+    bottom: 30%;
+    left: 5%;
   }
 
   .info h2 {
-    font-size: 24px !important;
-    line-height: 1.3 !important;
+    font-size: 24px;
+    line-height: 1.3;
   }
 
   .links a {
-    font-size: 28px !important;
+    font-size: 28px;
   }
 
   .footer-schedule a {
-    font-size: 12px !important;
-    margin: 1px 0 !important;
+    font-size: 12px;
+    margin: 1px 0;
   }
 
   .social-box {
-    width: 50px !important;
-    height: 50px !important;
+    width: 50px;
+    height: 50px;
   }
 
   .social-box i {
-    font-size: 20px !important;
+    font-size: 20px;
   }
 
   .info {
-    padding: 20px 15px !important;
+    padding: 20px 15px;
   }
 
   .info-bottom {
-    padding: 0 15px !important;
+    padding: 10px 15px;
   }
 
   .info-bottom .location,
   .info-bottom .date {
-    font-size: 12px !important;
+    font-size: 12px;
   }
 }
 
-/* Specific fix for iPhone 13 Pro Max */
-@media only screen and (min-device-width: 390px) and (max-device-width: 428px) and (min-device-height: 800px) and (max-device-height: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+/* Extra Small Devices */
+@media screen and (max-device-width: 400px) {
+  .info {
+    height: 80vh;
+  }
+
+  .social {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    padding: 15px 0;
+    margin: 0 auto;
+  }
+
+  .social-box {
+    height: 45px;
+    width: 45px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-box i {
+    font-size: 20px;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* iPhone 13/12 Pro Max specific styles */
+@media only screen and (min-width: 390px) and (max-width: 428px) and (min-height: 800px) and (max-height: 926px) {
   .hero {
     height: 70vh;
     margin-top: 12vh;
     position: relative;
-  }
-  
-  .exploring {
-    top: 15%;
-    left: 5%;
-    font-size: 32px;
-  }
-  
-  .the-next {
-    top: 40%;
-    right: 5%;
-    font-size: 32px;
-  }
-  
-  .possibility {
-    bottom: 25%;
-    left: 5%;
-    font-size: 32px;
-  }
-  
-  .info-bottom {
-    position: relative;
-    bottom: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .grid-box {
-    height: auto;
-    min-height: 400px;
-    padding-bottom: 80px;
-    position: relative;
-  }
-  
-  .grid-box img {
-    max-height: 60%;
-    width: auto;
-    margin: 20px auto;
-  }
-  
-  .albums {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    transform: none;
-    width: 90%;
-    margin: 15px auto;
-  }
-  
-  .album-title {
-    width: 60%;
-  }
-}
-
-/* General mobile display fixes */
-@media screen and (max-width: 480px) {
-  /* Prevent text overflow in all containers */
-  * {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-  }
-  
-  /* Fix for the footer on mobile */
-  footer {
-    padding: 20px 10px;
-  }
-  
-  /* Better spacing for grid boxes */
-  .discography-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  /* Improve search bar responsiveness */
-  .search {
-    height: auto;
-    min-height: 50px;
-    padding: 10px 15px;
-  }
-  
-  .search-input {
-    width: 80%;
-    margin-right: 5px;
-  }
-}
-
-/* Add visible class for footer display toggle */
-.hiding-footer {
-  position: fixed;
-  bottom: -150px;
-  left: 0;
-  width: 100%;
-  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateZ(0);
-  z-index: 999;
-}
-
-.hiding-footer.visible {
-  bottom: 0;
-  transform: translateZ(0);
-}
-
-/* iPhone 13/12 Pro Max specific styles in portrait mode */
-@media only screen and (min-device-width: 390px) and (max-device-width: 428px) and (min-device-height: 844px) and (max-device-height: 926px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
-  /* Hero section fixes */
-  .hero {
-    height: 60vh;
-    overflow: visible;
-    margin-top: 12vh;
-    position: relative;
+    margin-bottom: 25px;
   }
   
   .exploring {
@@ -2183,8 +1969,7 @@ footer{
   
   .info-bottom {
     position: relative;
-    margin-top: 20px;
-    bottom: auto;
+    margin-top: 15px;
     padding: 10px 20px;
     flex-direction: column;
     align-items: center;
@@ -2196,8 +1981,7 @@ footer{
     text-align: center;
     white-space: normal;
   }
-
-  /* Discography grid fixes */
+  
   .grid-box {
     height: auto;
     min-height: 400px;
@@ -2221,30 +2005,45 @@ footer{
     width: 90%;
     margin: 15px auto;
   }
-  
-  .album-title {
-    width: 60%;
-  }
-  
-  .buy {
-    width: 40%;
-  }
 }
 
-/* Fix for older iPhones and generic small screens */
-@media screen and (max-width: 414px) {
-  .grid-box {
-    height: auto;
-    min-height: 350px;
-    padding-bottom: 70px;
-  }
-  
-  .grid-box img {
-    margin-top: 30px;
-    max-height: 200px;
-  }
-  
-  .albums {
-    width: 95%;
-  }
+/* Add visible class for footer display toggle */
+.hiding-footer {
+  position: fixed;
+  bottom: -150px;
+  left: 0;
+  width: 100%;
+  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  z-index: 999;
+}
+
+.hiding-footer.visible {
+  bottom: 0;
+  transform: translateZ(0);
+}
+
+.form-status {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background-color: #34c42f;
+  color: white;
+}
+
+.form-status.error {
+  display: block;
+  background-color: #ff3b30;
+  color: white;
+}
+
+.form-status.sending {
+  display: block;
+  background-color: #007aff;
+  color: white;
 }
