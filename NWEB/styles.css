@@ -858,30 +858,32 @@ footer {
   transition: all 0.3s ease;
 }
 
-/* Update hiding footer styles */
+/* Update hiding footer styles - this should be the only .hiding-footer definition */
 .hiding-footer {
   background-color: #FFFF00;
   color: #000;
   position: fixed;
-  bottom: -300px; /* Increased hiding distance further */
+  bottom: -300px;
   left: 0;
   width: 100%;
   height: auto;
   max-height: 25vh;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateZ(0) translateY(20px); /* Increased Y offset */
+  transform: translateZ(0) translateY(20px);
   will-change: transform, bottom, opacity;
   z-index: 999;
   overflow: hidden;
-  pointer-events: none; /* Prevent interaction when hidden */
-  opacity: 0; /* Start fully transparent when hidden */
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden; /* Add visibility property for better hiding */
 }
 
 .hiding-footer.visible {
   bottom: 0;
   transform: translateZ(0) translateY(0);
   opacity: 1;
-  pointer-events: auto; /* Re-enable interaction when visible */
+  pointer-events: auto;
+  visibility: visible;
 }
 
 /* Ensure footer content doesn't peek through */
