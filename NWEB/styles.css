@@ -862,18 +862,17 @@ footer {
 
 /* Update hiding footer styles to match regular footer exactly */
 .hiding-footer {
-  background-color: #FFFF00; /* Match the yellow color */
+  background-color: #FFFF00; /* Keep the yellow color as requested */
   color: #000;
   position: fixed;
-  bottom: -300px;
+  bottom: -150px; /* Reduced from -300px to match regular footer height */
   left: 0;
   width: 100%;
   height: 25vh; /* Set exact height to match regular footer */
   max-height: 25vh;
-  min-height: 150px;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(20px) translateZ(0);
-  will-change: transform, opacity;
+  min-height: auto; /* Remove fixed min-height to allow responsive sizing */
+  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transform: translateZ(0);
   z-index: 999;
   overflow: hidden;
   pointer-events: none;
@@ -886,7 +885,7 @@ footer {
 
 .hiding-footer.visible {
   bottom: 0;
-  transform: translateY(0) translateZ(0);
+  transform: translateZ(0);
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
@@ -896,7 +895,7 @@ footer {
 .hiding-footer .footer-content {
   flex: 1;
   padding: 15px;
-  width: 50%; /* Match regular footer width */
+  width: 33.33%; /* Match regular footer width distribution */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -914,7 +913,7 @@ footer {
   border-right: 1px solid #000;
   opacity: 1;
   transition: opacity 0.2s ease;
-  width: auto; /* Match regular footer width */
+  width: 33.33%; /* Match regular footer width distribution */
 }
 
 /* Match social styling */
@@ -1318,7 +1317,8 @@ footer {
   }
 
   .hiding-footer {
-    height: auto;
+    height: 25vh;
+    max-height: 25vh;
     padding: 20px 0;
   }
   .press-box {
@@ -2021,6 +2021,9 @@ footer {
 .hiding-footer.visible {
   bottom: 0;
   transform: translateZ(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .form-status {
