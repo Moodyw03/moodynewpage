@@ -860,25 +860,43 @@ footer {
 
 /* Update hiding footer styles */
 .hiding-footer {
-  background-color: #FFFF00; /* Pure bright yellow color as requested */
-  color: #000; /* Black text for better contrast on yellow */
+  background-color: #FFFF00;
+  color: #000;
   position: fixed;
-  bottom: -100px;
+  bottom: -300px; /* Increased hiding distance further */
   left: 0;
   width: 100%;
-  transition: bottom 0.3s ease;
+  height: auto;
+  max-height: 25vh;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0) translateY(20px); /* Increased Y offset */
+  will-change: transform, bottom, opacity;
+  z-index: 999;
+  overflow: hidden;
+  pointer-events: none; /* Prevent interaction when hidden */
+  opacity: 0; /* Start fully transparent when hidden */
 }
 
 .hiding-footer.visible {
   bottom: 0;
+  transform: translateZ(0) translateY(0);
+  opacity: 1;
+  pointer-events: auto; /* Re-enable interaction when visible */
 }
 
-/* Keep all the existing footer content styles */
+/* Ensure footer content doesn't peek through */
 .hiding-footer .footer-content,
 .hiding-footer .footer-schedule,
 .hiding-footer .social {
-  display: flex;
-  color: #000;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.hiding-footer:not(.visible) .footer-content,
+.hiding-footer:not(.visible) .footer-schedule,
+.hiding-footer:not(.visible) .social {
+  opacity: 0;
+  transition: opacity 0.1s ease;
 }
 
 .hiding-footer .social-box {
@@ -1580,6 +1598,90 @@ footer{
 }
 }
 
+/* Comprehensive fix for iPhone 12/13 Pro in portrait mode with JS animations */
+@media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (min-device-height: 800px) and (max-device-height: 926px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
+  /* Create more space for the hero section */
+  .hero {
+    height: auto; /* Change from fixed height to auto */
+    min-height: 50vh; /* Minimum height */
+    max-height: 60vh; /* Maximum height */
+    margin-top: 12vh;
+    margin-bottom: 15vh; /* Add bottom margin to create space */
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Ensure text elements have enough space and don't overlap */
+  .exploring, .the-next, .possibility {
+    position: relative; /* Change from absolute to relative */
+    margin: 20px 0; /* Add vertical margin */
+    font-size: 28px;
+    transform: none !important; /* Override any transform from JS */
+    animation: none !important; /* Disable floating animation on mobile */
+  }
+  
+  .exploring {
+    align-self: flex-start;
+    margin-left: 5%;
+  }
+  
+  .the-next {
+    align-self: flex-end;
+    margin-right: 5%;
+  }
+  
+  .possibility {
+    align-self: flex-start;
+    margin-left: 5%;
+  }
+  
+  /* Completely separate info-bottom from hero section */
+  .info-bottom {
+    position: static; /* Remove positioning */
+    margin-top: 30px; /* Space after hero section */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Add slight background */
+    z-index: 5; /* Ensure it's above other elements */
+  }
+  
+  /* Make text in info-bottom more readable */
+  .info-bottom .location,
+  .info-bottom .date {
+    text-align: center;
+    font-size: 14px;
+    max-width: 100%;
+    white-space: normal;
+    padding: 5px 0;
+  }
+  
+  /* Add specific override for any JS animation effects */
+  .hero * {
+    transform: none !important; /* Force override any transform */
+  }
+}
+
+/* Add this to ensure JS animations don't cause layout issues on small screens */
+@media screen and (max-width: 428px) {
+  /* Disable floating animation on small screens */
+  @keyframes float {
+    0%, 50%, 100% { transform: translateY(0); }
+  }
+  
+  /* Override any JS-added inline styles that might cause layout issues */
+  .hero {
+    overflow: visible !important;
+  }
+}
+
 
 /* Media query for iphone 13 pro max landscape mode */
 @media only screen and (min-device-width: 426px) and (max-device-width: 926px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
@@ -1997,14 +2099,17 @@ footer{
 /* Add visible class for footer display toggle */
 .hiding-footer {
   position: fixed;
-  bottom: -100px;
+  bottom: -150px;
   left: 0;
   width: 100%;
-  transition: bottom 0.3s ease;
+  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  z-index: 999;
 }
 
 .hiding-footer.visible {
   bottom: 0;
+  transform: translateZ(0);
 }
 
 /* iPhone 13/12 Pro Max specific styles in portrait mode */
