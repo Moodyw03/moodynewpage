@@ -414,6 +414,9 @@ footer {
   line-height: 1;
   margin: 5px 0;
   transition: all 0.3s ease;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .mix-title .exploring:hover,
@@ -496,6 +499,8 @@ footer {
   line-height: 1.2;
   margin-bottom: 30px;
   font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .visuals-title .exploring,
@@ -706,6 +711,9 @@ footer {
   font-size: 48px;
   margin-bottom: 40px;
   left: 0;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .contact-title .exploring {
@@ -844,6 +852,9 @@ footer {
 .visuals-title div {
   transition: all 0.3s ease;
   position: relative;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .visual-description {
@@ -858,6 +869,9 @@ footer {
   line-height: 1;
   margin: 5px 0;
   transition: all 0.3s ease;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 /* Update hiding footer styles to match regular footer exactly */
@@ -1124,6 +1138,9 @@ footer {
   .the-next,
   .possibility {
     font-size: 28px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   /* Contact page */
@@ -1196,6 +1213,9 @@ footer {
   .press-title div {
     font-size: 40px;
     margin-bottom: 15px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   /* Visuals page */
@@ -1251,8 +1271,11 @@ footer {
   }
 
   .visuals-title div {
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   /* Discography page */
@@ -1426,6 +1449,9 @@ footer {
   .the-next,
   .possibility {
     font-size: 28px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .exploring {
@@ -1446,16 +1472,28 @@ footer {
   .mix-title .exploring {
     top: 10%;
     left: 5%;
+    font-size: 50px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .mix-title .the-next {
     top: 45%;
     right: 5%;
+    font-size: 50px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .mix-title .possibility {
     bottom: 10%;
     left: 5%;
+    font-size: 50px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .press-title .exploring {
@@ -1470,7 +1508,9 @@ footer {
 
   .press-title .possibility {
     bottom: 10%;
-    left: 5%;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .info h2 {
@@ -1614,28 +1654,43 @@ footer {
     top: 10%;
     left: 5%;
     font-size: 50px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .mix-title .the-next {
     top: 45%;
     right: 5%;
     font-size: 50px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .mix-title .possibility {
     bottom: 10%;
     left: 5%;
     font-size: 50px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .visuals-title .exploring,
   .visuals-title .the-next,
   .visuals-title .possibility {
     font-size: 35px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .press-title .possibility {
     bottom: 10%;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .contact-right {
@@ -1706,6 +1761,9 @@ footer {
   .the-next,
   .possibility {
     font-size: 32px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .exploring {
@@ -1848,6 +1906,9 @@ footer {
   .the-next,
   .possibility {
     font-size: 28px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
   .exploring {
@@ -1953,18 +2014,27 @@ footer {
     top: 15%;
     left: 5%;
     font-size: 30px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
   
   .the-next {
     top: 40%;
     right: 5%;
     font-size: 30px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
   
   .possibility {
     bottom: 25%;
     left: 5%;
     font-size: 30px;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
   }
   
   .info-bottom {
