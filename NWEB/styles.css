@@ -762,6 +762,10 @@ footer {
   left: 0;
   border-right: 1px solid #000;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 40px;
 }
 
 .press-right {
@@ -1182,6 +1186,7 @@ footer {
     border-right: none;
     border-bottom: 1px solid #000;
     z-index: 1;
+    justify-content: flex-start;
   }
 
   .press-right {
@@ -1209,6 +1214,10 @@ footer {
 
   .press-content {
     width: 100%;
+  }
+
+  .press-title {
+    padding: 20px 0;
   }
 
   .press-title div {
@@ -1509,18 +1518,35 @@ footer {
   .press-title .exploring {
     top: 10%;
     left: 5%;
+    position: relative;
+    font-size: 32px;
   }
 
   .press-title .the-next {
     top: 45%;
-    right: 15%;
+    right: 5%;
+    position: relative;
+    font-size: 32px;
   }
 
   .press-title .possibility {
     bottom: 10%;
+    position: relative;
+    font-size: 32px;
     font-family: "Hanken Grotesk", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
+  }
+  
+  .press-title, .visuals-title {
+    padding: 30px 20px;
+    height: auto;
+  }
+  
+  .press-left, .visual-left {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   .info h2 {
@@ -1749,6 +1775,20 @@ footer {
     word-wrap: break-word;
   }
   
+  /* Better consistency between pages */
+  .press-title div, .visuals-title div {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .press-left, .visual-left {
+    padding: 20px 15px;
+  }
+  
+  .press-title, .visuals-title {
+    padding: 20px 10px;
+  }
+  
   /* Fix for the footer on mobile */
   footer {
     padding: 20px 10px;
@@ -1806,6 +1846,23 @@ footer {
     font-family: "Hanken Grotesk", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
+  }
+  
+  /* Ensure consistency across pages */
+  .press-title div, 
+  .visuals-title div {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .press-left, 
+  .visual-left {
+    padding: 15px 10px;
+  }
+  
+  .press-title, 
+  .visuals-title {
+    padding: 15px 10px;
   }
 
   .exploring {
