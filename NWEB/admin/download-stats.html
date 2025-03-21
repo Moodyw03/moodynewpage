@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Statistics - Moody Waters</title>
+    <style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .stat-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .stat-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: 500;
+            color: #111;
+        }
+        .stat-date {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+        .note {
+            background-color: #fffbe6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #faad14;
+        }
+        .actions {
+            margin-top: 30px;
+        }
+        button {
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Plugin Download Statistics</h1>
+    
+    <div class="note">
+        <p><strong>Note:</strong> This page shows local statistics from this browser only. For comprehensive statistics, 
+        check your Google Analytics dashboard or set up server-side tracking.</p>
+    </div>
+    
+    <div class="stats-container" id="statsContainer">
+        <!-- Stats will be populated here via JavaScript -->
+    </div>
+    
+    <div class="actions">
+        <button id="refreshStats">Refresh Statistics</button>
+        <button id="clearStats">Clear Local Statistics</button>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to display stats from localStorage
+            function displayStats() {
+                const statsContainer = document.getElementById('statsContainer');
+                statsContainer.innerHTML = '';
+                
+                // Get all localStorage keys
+                let hasStats = false;
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    
+                    // Check if this is a plugin download key
+                    if (key.startsWith('moody_plugin_')) {
+                        hasStats = true;
+                        const count = localStorage.getItem(key);
+                        const pluginName = key.replace('moody_plugin_', '')
+                            .split('_')
+                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                            .join(' ');
+                        
+                        // Create stat card
+                        const card = document.createElement('div');
+                        card.className = 'stat-card';
+                        card.innerHTML = `
+                            <div class="stat-title">${pluginName}</div>
+                            <div class="stat-value">${count} download${count > 1 ? 's' : ''}</div>
+                            <div class="stat-date">Last updated: ${new Date().toLocaleDateString()}</div>
+                        `;
+                        
+                        statsContainer.appendChild(card);
+                    }
+                }
+                
+                // If no stats found
+                if (!hasStats) {
+                    statsContainer.innerHTML = '<p>No download statistics available yet.</p>';
+                }
+            }
+            
+            // Initial display
+            displayStats();
+            
+            // Refresh button
+            document.getElementById('refreshStats').addEventListener('click', displayStats);
+            
+            // Clear button
+            document.getElementById('clearStats').addEventListener('click', function() {
+                if (confirm('Are you sure you want to clear all local download statistics?')) {
+                    // Only clear plugin download keys
+                    for (let i = localStorage.length - 1; i >= 0; i--) {
+                        const key = localStorage.key(i);
+                        if (key.startsWith('moody_plugin_')) {
+                            localStorage.removeItem(key);
+                        }
+                    }
+                    displayStats();
+                    alert('Local statistics cleared successfully.');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
