@@ -1,0 +1,133 @@
+/* Plugins page specific styles */
+.plugins-title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 5%;
+  cursor: pointer;
+  position: relative;
+}
+
+.plugins-title div {
+  position: static !important;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: block;
+  width: 100%;
+  transform: none !important;
+  font-size: 46px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  line-height: 1.3;
+  color: #111;
+}
+
+/* Explicitly set the order of title elements */
+.plugins-title .exploring {
+  order: 1 !important;
+}
+
+.plugins-title .the-next {
+  order: 2 !important;
+}
+
+.plugins-title .possibility {
+  order: 3 !important;
+}
+
+.plugins-title div:hover {
+  transform: translateX(10px) !important;
+}
+
+/* Glitch effect for the scrambled text */
+.dud {
+  color: #34c42f;
+  text-shadow: 0 0 8px rgba(52, 196, 47, 0.7);
+  display: inline-block;
+  animation: glitch 50ms infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Animated cursor effect */
+.plugins-title div::after {
+  content: '|';
+  position: absolute;
+  right: -15px;
+  animation: blink 1s infinite;
+  opacity: 0;
+}
+
+.plugins-title div:last-child::after {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Flash animation for title click effect */
+@keyframes flash {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  .plugins-title {
+    padding: 10px;
+  }
+  
+  .plugins-title div {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .plugins-title div {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .plugins-title div {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .plugins-title div {
+    font-size: 24px;
+  }
+} 
