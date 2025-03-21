@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plugins - Your Name</title>
+    <title>Plugins - Moody Waters</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -35,46 +35,61 @@
 
         <div class="plugins-right">
             <div class="plugins-grid">
-                <!-- Example Plugin Item -->
+                <!-- MoodLoop -->
                 <div class="plugin-box">
                     <div class="plugin-image">
-                        <img src="path/to/plugin1-image.jpg" alt="Plugin 1">
+                        <img src="images%20plugins/moodloop.png" alt="MoodLoop">
                     </div>
                     <div class="plugin-content">
-                        <h3>Plugin Name</h3>
-                        <p class="plugin-description">A detailed description of what this plugin does and its key features.</p>
+                        <h3>MoodLoop</h3>
+                        <p class="plugin-description">A creative looping tool that helps you create unique rhythmic patterns and melodic loops with an intuitive interface for music production.</p>
                         <div class="plugin-links">
-                            <a href="#" class="demo-link">Try Demo</a>
-                            <a href="#" class="download-link">Download</a>
+                            <a href="javascript:void(0);" class="demo-link">FREE</a>
+                            <a href="https://moodloop.netlify.app/" class="download-link" target="_blank">Navigate</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- New Plugin Box 2 -->
+                <!-- Pitch Shift -->
                 <div class="plugin-box">
                     <div class="plugin-image">
-                        <img src="path/to/plugin2-image.jpg" alt="Plugin 2">
+                        <img src="images%20plugins/pitchshift.png" alt="Pitch Shift">
                     </div>
                     <div class="plugin-content">
-                        <h3>Plugin Name 2</h3>
-                        <p class="plugin-description">Description for the second plugin. Explain its unique features and benefits.</p>
+                        <h3>Pitch Shift</h3>
+                        <p class="plugin-description">Advanced spatial audio processing tool with unique spectral manipulation capabilities for creating immersive soundscapes and textures.</p>
                         <div class="plugin-links">
-                            <a href="#" class="demo-link">Try Demo</a>
-                            <a href="#" class="download-link">Download</a>
+                            <a href="javascript:void(0);" class="demo-link">FREE</a>
+                            <a href="https://pitchshift.spatialmastering.co.uk/app" class="download-link" target="_blank">Navigate</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- New Plugin Box 3 -->
+                <!-- MoodMIDI -->
                 <div class="plugin-box">
                     <div class="plugin-image">
-                        <img src="path/to/plugin3-image.jpg" alt="Plugin 3">
+                        <img src="images%20plugins/moodmidi01.png" alt="MoodMIDI">
                     </div>
                     <div class="plugin-content">
-                        <h3>Plugin Name 3</h3>
-                        <p class="plugin-description">Description for the third plugin. Highlight its main features and use cases.</p>
+                        <h3>MoodMIDI</h3>
+                        <p class="plugin-description">Innovative MIDI generation and manipulation tool that helps create evolving patterns and sequences for electronic music production.</p>
                         <div class="plugin-links">
-                            <a href="#" class="demo-link">Try Demo</a>
+                            <a href="https://moodmidi.netlify.app/pricing" class="demo-link credit-button" target="_blank" title="Purchase credits to unlock premium features">CREDITS</a>
+                            <a href="https://moodmidi.netlify.app/" class="download-link" target="_blank">Navigate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moody P1 -->
+                <div class="plugin-box">
+                    <div class="plugin-image">
+                        <img src="images%20plugins/moody%20p1.png" alt="Moody P1">
+                    </div>
+                    <div class="plugin-content">
+                        <h3>Moody P1</h3>
+                        <p class="plugin-description">A versatile audio processor with innovative effects and sound design capabilities for professional music production workflows.</p>
+                        <div class="plugin-links">
+                            <a href="javascript:void(0);" class="demo-link">FREE</a>
                             <a href="#" class="download-link">Download</a>
                         </div>
                     </div>
@@ -91,7 +106,7 @@
         </div>
       </div>
       <div class="footer-schedule">
-        <a href="index.html">DISCOGRAPHY</a>
+        <a href="discography.html">DISCOGRAPHY</a>
         <a href="mixes.html">MIXES</a>
         <a href="visuals.html">VISUALS/VIDEO</a>
         <a href="press.html">PRESS</a>
@@ -108,5 +123,17 @@
     </footer>
     <script src="menu.js"></script>
     <script src="script.js"></script>
+    <script>
+      // Add click feedback for plugin buttons, excluding FREE buttons
+      document.querySelectorAll('.download-link, .credit-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+          // Add a brief visual feedback when clicked
+          this.classList.add('clicked');
+          setTimeout(() => {
+            this.classList.remove('clicked');
+          }, 300);
+        });
+      });
+    </script>
 </body>
 </html> 

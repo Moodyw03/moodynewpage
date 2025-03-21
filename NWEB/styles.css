@@ -2262,3 +2262,467 @@ footer {
   flex-direction: column;
   min-height: auto;
 }
+
+/* Plugins Page Styles */
+.plugins-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  background-color: #fff;
+  color: #333;
+}
+
+.plugins-left {
+  width: 35%;
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 80px);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.plugins-title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.plugins-title div {
+  font-size: 46px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  line-height: 1.3;
+  color: #111;
+}
+
+.plugins-right {
+  width: 65%;
+  padding: 40px 40px 80px 0;
+}
+
+.plugins-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.plugin-box {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.plugin-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.plugin-box:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.03), transparent);
+  z-index: -1;
+  transition: height 0.3s ease;
+}
+
+.plugin-box:hover:after {
+  height: 100%;
+}
+
+.plugin-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.plugin-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.plugin-box:hover .plugin-image img {
+  transform: scale(1.05);
+}
+
+.plugin-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.plugin-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.plugin-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.plugin-links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.plugin-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-link {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.download-link {
+  background-color: #333;
+  color: #fff;
+}
+
+.demo-link:hover, .download-link:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.demo-link:before, .download-link:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.7s ease;
+}
+
+.demo-link:hover:before, .download-link:hover:before {
+  left: 100%;
+}
+
+/* Special style for CREDITS button */
+a.demo-link:contains('CREDITS') {
+  background-color: #f0c040;
+  color: #333;
+  border: 1px solid #d4a520;
+}
+
+a.demo-link:contains('CREDITS'):hover {
+  background-color: #d4a520;
+  color: #333;
+}
+
+/* Fix for browsers that don't support :contains */
+.plugin-box:nth-child(3) .demo-link {
+  background-color: #f0c040;
+  color: #333;
+  border: 1px solid #d4a520;
+}
+
+.plugin-box:nth-child(3) .demo-link:hover {
+  background-color: #d4a520;
+  color: #333;
+}
+
+/* Disable animations for FREE buttons */
+.demo-link:not(.credit-button) {
+  pointer-events: none;
+  transform: none !important;
+  transition: none !important;
+}
+
+.demo-link:not(.credit-button):hover,
+.demo-link:not(.credit-button):active,
+.demo-link:not(.credit-button):focus {
+  transform: none !important;
+  background-color: #e0e0e0 !important;
+  color: #333 !important;
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+}
+
+.demo-link:not(.credit-button):before {
+  display: none !important;
+}
+
+/* Media Queries for Plugins Page */
+@media screen and (max-width: 1024px) {
+  .plugins-container {
+    flex-direction: column;
+  }
+  
+  .plugins-left {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    padding: 30px;
+  }
+  
+  .plugins-right {
+    width: 100%;
+    padding: 0 30px 60px;
+  }
+  
+  .plugins-title {
+    padding: 10px;
+  }
+  
+  .plugins-title div {
+    font-size: 38px;
+  }
+  
+  .plugins-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .plugins-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .plugin-image {
+    height: 200px;
+  }
+  
+  .plugins-title div {
+    font-size: 32px;
+  }
+  
+  .plugin-content h3 {
+    font-size: 18px;
+  }
+  
+  .plugin-description {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .plugins-left {
+    padding: 15px;
+  }
+  
+  .plugins-right {
+    padding: 0 15px 40px;
+  }
+  
+  .plugin-content {
+    padding: 15px;
+  }
+  
+  .plugins-title div {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .plugin-image {
+    height: 180px;
+  }
+  
+  .plugin-content h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .plugin-description {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  
+  .plugin-links a {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .plugins-container {
+    padding-top: 60px;
+  }
+  
+  .plugins-left {
+    padding: 10px;
+  }
+  
+  .plugins-title div {
+    font-size: 24px;
+  }
+  
+  .plugin-image {
+    height: 160px;
+  }
+  
+  .plugin-content {
+    padding: 12px;
+  }
+  
+  .plugin-links {
+    gap: 10px;
+  }
+  
+  .plugin-links a {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Fix for images in plugins folder path */
+.plugin-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  max-width: 100%;
+}
+
+/* Touch-friendly improvements for plugins page */
+@media (hover: none) {
+  .plugin-box {
+    transform: none !important;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .plugin-box:active {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .plugin-links a {
+    padding: 10px 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+  }
+}
+
+/* Fix for very small devices */
+@media screen and (max-width: 320px) {
+  .plugins-container {
+    padding-top: 50px;
+  }
+  
+  .plugins-title div {
+    font-size: 22px;
+  }
+  
+  .plugin-content h3 {
+    font-size: 15px;
+  }
+  
+  .plugin-description {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .plugin-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .plugin-links a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Credit button specific style */
+.credit-button {
+  background-color: #f0c040 !important;
+  color: #333 !important;
+  border: 1px solid #d4a520 !important;
+}
+
+.credit-button:hover {
+  background-color: #d4a520 !important;
+}
+
+/* Loading animation for plugins page */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.plugins-container {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.plugin-box {
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.plugin-box:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.plugin-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.plugin-box:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.plugin-box:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Button click effect */
+.plugin-links a.clicked {
+  transform: scale(0.95);
+  opacity: 0.9;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
